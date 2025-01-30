@@ -13,7 +13,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the repository from GitHub
-                git branch: 'main', url: 'https://github.com/GollaGiddaiah/jenkins-test.git'
+                git branch: 'main', url: 'https://github.com/bggiri2000/jenkins-app.git'
             }
         }
 
@@ -31,15 +31,15 @@ pipeline {
                 script {
                     if (params.ENVIRONMENT == 'dev') {
                         // Set environment variables for dev environment
-                        env.GCP_PROJECT = 'bunny-project-444905'
+                        env.GCP_PROJECT = 'project-bg-444309'
                         env.GCP_REGION = 'us-central1'
                     } else if (params.ENVIRONMENT == 'staging') {
                         // Set environment variables for staging environment
-                        env.GCP_PROJECT = 'bunny-project-444905'
+                        env.GCP_PROJECT = 'project-bg-444309'
                         env.GCP_REGION = 'us-central1'
                     } else if (params.ENVIRONMENT == 'prod') {
                         // Set environment variables for prod environment
-                        env.GCP_PROJECT = 'bunny-project-444905'
+                        env.GCP_PROJECT = 'project-bg-444309'
                         env.GCP_REGION = 'us-central1'
                     }
                     echo "Deploying to ${params.ENVIRONMENT} environment"
